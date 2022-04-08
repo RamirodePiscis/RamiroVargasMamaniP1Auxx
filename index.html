@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>Practica Nº1</title>
+    </head>
+    <body>
+
+        <div>
+            <h1>PREGUNTA 1</h1>
+            <h3>Realiza un script que pida la edad y si es mayor de 18 años indica que ya puede conducir.</h3>
+            Introduce tu edad: <input type="text" id="edad"><br><br>
+            <input type="submit" value="Enviar" onclick="mayor_edad()">
+            <script src="pregunta1.js"></script>
+        </div>
+
+        <div>
+            <h1>PREGUNTA 2</h1>
+            <h3>Realiza un script que pida números hasta que se pulse “cancelar”. Si no es un número deberá indicarse con un «alert» y seguir pidiendo. Al salir con “cancelar” deberá indicarse la suma total de los números introducidos.</h3>
+            Introduce un numero: <input type="number" id="numero"><br><br>
+            <input type="submit" value="Enviar" onclick="enviar()">
+            <input type="submit" value="Cancelar" onclick="cancelar()">
+            <script src="pregunta2.js"></script>
+        </div>
+
+        <div>
+            <h1>PREGUNTA 3</h1>
+            <h3>Realiza un script que pida por teclado 3 edades y 3 nombres e indique el nombre del mayor.</h3>
+            Introduce el primer nombre: <input type="text" id="nombre1">
+            Introduce su edad <input type="number" id="edad1"><br><br>
+
+            Introduce el segundo nombre: <input type="text" id="nombre2">
+            Introduce su edad <input type="number" id="edad2"><br><br>
+
+            Introduce el tercer nombre: <input type="text" id="nombre3">
+            Introduce su edad <input type="number" id="edad3"><br><br>
+
+            <input type="submit" value="Enviar" onclick="enviar1()"><br><br>
+            <script src="pregunta3.js"></script>
+        </div>
+
+        <div>
+            <h1>PREGUNTA 4</h1>
+            <h3>Genera 3 números aleatorios entre 1 y 99 pero que no se repita ninguno.</h3>
+            <script src="pregunta4.js"></script>
+        </div>
+
+        <div>
+            <h1>PREGUNTA 5</h1>
+            <h3>Realiza un script que cuente el número de vocales que tiene un texto.</h3>
+            <script>
+                function contarVocales(texto){
+                    let contador=0;
+                    let vocales=['a','e','i','o','u','A','E','I','O','U'];
+
+                    for (let i=0; i<texto.length; i++){
+                        if(vocales.indexOf(texto[i]) >=0){
+                            contador++;
+                        }
+                    }
+                    return contador;
+                }
+                console.log("# de vocales del texto RamiroVargas: "+contarVocales('RamiroVargas'));
+            </script>
+        </div>
+
+        <div>
+            <h1>PREGUNTA 6</h1>
+            <h3>Pedimos una cadena de texto que sabemos que puede contener paréntesis. Realiza un script que extraiga la cadena que se encuentra entre los paréntesis. Ejemplo: Si escribimoe el texto “Hola (que) tal” se mostrará “que”. Si no existe el signo “(“ mostrará una cadena vacía y si existe el signo “(“pero no el signo “)” mostrará desde el primer paréntesis hasta el final.</h3>
+            <script>
+
+            </script>
+        </div>
+
+        <div>
+            <h1>PREGUNTA 7</h1>
+            <h3>Realiza un script que pida una cadena de texto y la devuelva al revés. Es decir, si tecleo “hola que tal” deberá mostrar “lat euq aloh”.</h3>
+            <script>
+                function reversa(texto){
+                    let mensaje="";
+                    for(let i=texto.length-1; i>=0; i--){
+                        mensaje=mensaje + texto.charAt(i);
+                    }
+                    return mensaje;
+                }
+                console.log("del mensaje hola que tal seria: "+reversa("hola que tal"));
+            </script>
+        </div>
+
+        <div>
+            <h1>PREGUNTA 8</h1>
+            <h3>Realiza un script que muestre la serie de fibonacci hasta un número entre 1 y 100 pedido por teclado.</h3>
+            <script>
+                function fibonacci(numero){
+                    let valor1=1;
+                    let valor2=1;
+                    let resultado=0;
+                    console.log(valor1);
+                    console.log(valor2);
+                    for(i=2; i<numero; i++){
+                        resultado=valor1+valor2;
+                        console.log(resultado);
+                        valor1=valor2;
+                        valor2=resultado;
+                    }
+                }
+            </script>
+        </div>
+
+        <div>
+            <h1>PREGUNTA 9</h1>
+            <h3>Realiza un juego de Piedra Papel Tijera contra el Pc.</h3>
+            <script>
+
+            </script>
+        </div>
+
+        <div>
+            <h1>PREGUNTA 10</h1>
+            <h3>Crea una función que reciba 2 parámetros, precio e iva, y devuelva el precio con iva incluido. Si no recibe el iva, aplicará el 21 por ciento por defecto.</h3>
+            <script>
+                function precioIva(precio, iva){
+                    let=total=0;
+                    if(iva === undefined){
+                        iva=0.21;
+                    }else{
+                        iva=iva/100;
+                    }
+                    total=(precio*iva)+precio;
+                    return total;
+                    console.log(total);
+                }
+            </script>
+        </div>
+
+        <div>
+            <h1>PREGUNTA 11</h1>
+            <script src="pregunta11.js"></script>
+        </div>
+
+        <div class="capa">
+            <h1>PREGUNTA 12</h1>
+            <h3>Realiza un script que muestre un reloj en pantalla con fecha y hora y que se actualice cada segundo. Función setTimeout().</h3>
+            <section>
+                <div class="reloj">
+                    <span id="tiempo">00 : 00 : 00</span>
+                </div>
+            </section>
+            <script src="pregunta12.js"></script>
+        </div>
+
+        <div>
+            <h1>PREGUNTA 13</h1>
+            <h3>Programa una función que dada una fecha valida determine cuantos años han pasado hasta el día de hoy.</h3>
+            <script>
+                function fecha(fecha){
+                    let fechaActual = new Date();
+                    let total;
+                    total=fechaActual-fecha;
+                    return total;
+                }
+            </script>
+        </div>
+
+        <div>
+            <h1>PREGUNTA 14</h1>
+            <h3>Programa una función que dada una cadena de texto cuente el numero de vocales y consonantes.</h3>
+            <script src="pregunta14.js"></script>
+        </div>
+    </body>
+</html>
